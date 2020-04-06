@@ -1,11 +1,15 @@
 // To parse this JSON data, do
 //
+
+List<String> complexStrings = ["简单", "中等", "较难"];
+
 class JPMealModel {
   String id;
   List<String> categories;
   String title;
   int affordability;
   int complexity;
+  String complexString;
   String imageUrl;
   int duration;
   List<String> ingredients;
@@ -21,6 +25,7 @@ class JPMealModel {
     this.title,
     this.affordability,
     this.complexity,
+    this.complexString,
     this.imageUrl,
     this.duration,
     this.ingredients,
@@ -37,6 +42,7 @@ class JPMealModel {
     title: json["title"],
     affordability: json["affordability"],
     complexity: json["complexity"],
+    complexString: complexStrings[json["complexity"]],
     imageUrl: json["imageUrl"],
     duration: json["duration"],
     ingredients: List<String>.from(json["ingredients"].map((x) => x)),
