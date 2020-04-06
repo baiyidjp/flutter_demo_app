@@ -18,6 +18,9 @@ class JPAppTheme {
       display3: TextStyle(fontSize: largeFontSize, color: Colors.black87),
       display4: TextStyle(fontSize: bigFontSize, color: Colors.black87),
     ),
-    primaryTextTheme: TextTheme()
+    // 导航栏标题
+    primaryTextTheme: TextTheme(
+      title: TextStyle(fontSize: 17)
+    )
   );
 }
