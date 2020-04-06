@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_app/core/layout/layout.dart';
 import 'package:flutter_demo_app/core/router/router.dart';
+import 'package:flutter_demo_app/core/viewmodels/app_providers.dart';
 import 'package:flutter_demo_app/ui/shared/app_theme.dart';
+import 'package:provider/provider.dart';
 
-main() => runApp(MyApp());
+main() {
+  runApp(
+    MultiProvider(
+      providers: providers,
+      child: MyApp(),
+    )
+  );
+}
 
 class MyApp extends StatelessWidget {
   @override

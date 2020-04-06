@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_app/core/models/category_model.dart';
-import 'package:flutter_demo_app/core/service/json_parse.dart';
+import 'package:flutter_demo_app/core/service/meal_request.dart';
 import 'package:flutter_demo_app/ui/pages/home/home_item.dart';
 import 'package:flutter_demo_app/core/layout/layout.dart';
 
 class JPHomePage extends StatefulWidget {
 
   static const String route = "/home";
-  // 123.207.32.32:8001/api/category
 
   @override
   _JPHomePageState createState() => _JPHomePageState();
@@ -22,11 +21,12 @@ class _JPHomePageState extends State<JPHomePage> {
     // TODO: implement initState
     super.initState();
 
-    JsonParse.categoryModels().then((res){
+    JPMealRequest.categoryData().then((res) {
       setState(() {
         _categoryModels = res;
       });
     });
+
   }
 
   @override
