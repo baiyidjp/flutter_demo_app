@@ -35,12 +35,16 @@ class _JPHomePageState extends State<JPHomePage> {
       appBar: AppBar(
         title: Text("首页"),
         centerTitle: true,
-        leading: GestureDetector(
-          child: Icon(Icons.menu),
-          onTap: () {
-            print("点击左侧");
+        leading: Builder(
+          builder: (iconContext) {
+            return IconButton(
+              icon: Icon(Icons.more_horiz),
+              onPressed: () {
+                Scaffold.of(iconContext).openDrawer();
+              },
+            );
           },
-        ),
+        )
       ),
       body: Container(
         child: GridView.builder(
@@ -56,6 +60,35 @@ class _JPHomePageState extends State<JPHomePage> {
             final model = _categoryModels[index];
             return JPHomeItem(model);
           },
+        ),
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              height: Layout.kStatusBarHeight+70.pt,
+              color: Colors.green,
+              alignment: Alignment(0, 0.5),
+              child: Text("我是抽屉", style: Theme.of(context).textTheme.display4.copyWith(fontWeight: FontWeight.w500)),
+            ),
+            SizedBox(height: 10.pt),
+            Column(
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(Icons.restaurant),
+                  title: Text("就餐", style: Theme.of(context).textTheme.display3),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.menu),
+                  title: Text("筛选", style: Theme.of(context).textTheme.display3),
+                )
+              ],
+            )
+          ],
         ),
       ),
     );
