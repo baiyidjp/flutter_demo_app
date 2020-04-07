@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_app/core/viewmodels/favor_view_model.dart';
+import 'package:flutter_demo_app/ui/pages/meal/meal_item.dart';
+import 'package:provider/provider.dart';
 
 class JPFavorPage extends StatefulWidget {
 
@@ -16,7 +19,16 @@ class _JPFavorPageState extends State<JPFavorPage> {
         title: Text("收藏"),
         centerTitle: true,
       ),
-      body: Text("收藏"),
+      body: Consumer<JPMealFavorViewModel>(
+        builder: (context, favorViewModel, index) {
+          return ListView.builder(
+            itemCount: favorViewModel.favorMeals.length,
+            itemBuilder: (context, index) {
+              return JPMealItem(favorViewModel.favorMeals[index]);
+            },
+          );
+        },
+      ),
     );
   }
 }

@@ -10,6 +10,7 @@ class JPAppTheme {
 
   static ThemeData normalTheme = ThemeData(
     primaryColor: Colors.red,
+    accentColor: Colors.orangeAccent,
     canvasColor: Color.fromRGBO(255, 254, 222, 1),
     textTheme: TextTheme(
       body1: TextStyle(fontSize: bodyFontSize),
@@ -20,7 +21,7 @@ class JPAppTheme {
     ),
     // 导航栏标题
     primaryTextTheme: TextTheme(
-      title: TextStyle(fontSize: 17)
+      title: TextStyle(fontSize: 17, fontWeight: FontWeight.w500)
     )
   );
 }
