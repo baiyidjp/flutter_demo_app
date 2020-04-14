@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_app/ui/pages/favor/favor.dart';
+import 'package:flutter_demo_app/ui/pages/home/filter_page.dart';
 import 'package:flutter_demo_app/ui/pages/home/home.dart';
 import 'package:flutter_demo_app/ui/pages/main/main_page.dart';
 import 'package:flutter_demo_app/ui/pages/meal/meal_detail.dart';
@@ -21,6 +22,12 @@ class JPRoute {
   };
 
   static final RouteFactory generateRoute  = (settings) {
+    if (settings.name == JPFilterPage.route) {
+      return MaterialPageRoute(
+        builder: (context) => JPFilterPage(),
+        fullscreenDialog: true
+      );
+    }
     return null;
   };
 
