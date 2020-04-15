@@ -29,7 +29,7 @@ class _JPMealPageState extends State<JPMealPage> {
       ),
       body: Selector<JPMealViewModel, List<JPMealModel>>(
         // 将泛型 A -> S
-        selector: (context, mealViewModel) => mealViewModel.meals.where((meal) => meal.categories.contains(categoryModel.id)).toList(),
+        selector: (context, mealViewModel) => mealViewModel.filterMeals.where((meal) => meal.categories.contains(categoryModel.id)).toList(),
         shouldRebuild: (pre, next) => !ListEquality().equals(pre, next),
         builder: (context, meals, child) {
           return ListView.builder(

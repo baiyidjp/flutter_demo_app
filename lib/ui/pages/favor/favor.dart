@@ -22,9 +22,9 @@ class _JPFavorPageState extends State<JPFavorPage> {
       body: Consumer<JPMealFavorViewModel>(
         builder: (context, favorViewModel, index) {
           return ListView.builder(
-            itemCount: favorViewModel.favorMeals.length,
+            itemCount: favorViewModel.filterMeals.length,
             itemBuilder: (context, index) {
-              return JPMealItem(favorViewModel.favorMeals[index]);
+              return JPMealItem(favorViewModel.filterMeals[index]);
             },
           );
         },

@@ -135,7 +135,7 @@ class _JPMealDetailPageState extends State<JPMealDetailPage> {
                 backgroundColor: Colors.purple,
               ),
               SizedBox(width: 10.pt),
-              Text(steps[index], style: Theme.of(_context).textTheme.display2)
+              Expanded(child: Text(steps[index], style: Theme.of(_context).textTheme.display2))
             ],
           );
         },

@@ -36,7 +36,7 @@ class _JPHomePageState extends State<JPHomePage> {
         title: Text("首页"),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.more_horiz),
+          icon: Icon(Icons.menu),
           onPressed: () {
             Scaffold.of(context).openDrawer();
           }

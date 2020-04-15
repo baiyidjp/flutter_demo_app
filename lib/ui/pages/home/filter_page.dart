@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_app/core/layout/layout.dart';
-import 'package:flutter_demo_app/core/models/filter_model.dart';
 import 'package:flutter_demo_app/core/viewmodels/filter_view_model.dart';
 import 'package:provider/provider.dart';
 

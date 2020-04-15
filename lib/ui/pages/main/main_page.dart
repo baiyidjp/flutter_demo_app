@@ -57,7 +57,10 @@ class _JPMainPageState extends State<JPMainPage> {
                   leading: Icon(Icons.menu),
                   title: Text("筛选", style: Theme.of(context).textTheme.display3),
                   onTap: () {
-                    Navigator.pushNamed(context, JPFilterPage.route);
+                    Navigator.of(context).pop();
+                    Future.delayed(Duration(milliseconds: 300), () {
+                      Navigator.pushNamed(context, JPFilterPage.route);
+                    });
                   },
                 )
               ],
