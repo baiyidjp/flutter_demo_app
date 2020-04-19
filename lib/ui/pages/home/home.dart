@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_app/core/models/category_model.dart';
 import 'package:flutter_demo_app/core/service/meal_request.dart';
+import 'package:flutter_demo_app/generated/l10n.dart';
 import 'package:flutter_demo_app/ui/pages/home/home_item.dart';
 import 'package:flutter_demo_app/core/layout/layout.dart';
 
@@ -33,7 +34,7 @@ class _JPHomePageState extends State<JPHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("首页"),
+        title: Text(S.of(context).homeTitle),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.menu),

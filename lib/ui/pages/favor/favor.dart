@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_app/core/viewmodels/favor_view_model.dart';
+import 'package:flutter_demo_app/generated/l10n.dart';
 import 'package:flutter_demo_app/ui/pages/meal/meal_item.dart';
 import 'package:provider/provider.dart';
 
@@ -16,7 +17,7 @@ class _JPFavorPageState extends State<JPFavorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("收藏"),
+        title: Text(S.of(context).favorTitle),
         centerTitle: true,
       ),
       body: Consumer<JPMealFavorViewModel>(

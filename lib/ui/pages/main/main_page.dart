@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo_app/ui/pages/favor/favor.dart';
 import 'package:flutter_demo_app/ui/pages/home/filter_page.dart';
 import 'package:flutter_demo_app/ui/pages/home/home.dart';
+import 'package:flutter_demo_app/ui/pages/profile/profile.dart';
 import 'package:flutter_demo_app/core/layout/layout.dart';
+import 'package:flutter_demo_app/generated/l10n.dart';
 
 class JPMainPage extends StatefulWidget {
 
@@ -18,6 +20,7 @@ class _JPMainPageState extends State<JPMainPage> {
 
   @override
   Widget build(BuildContext context) {
+    MainData.context = context;
     return Scaffold(
       body: IndexedStack(
         children: MainData.pages,
@@ -74,17 +77,19 @@ class _JPMainPageState extends State<JPMainPage> {
 
 class MainData {
 
+  static BuildContext context;
+
   static List<BottomNavigationBarItem> items = [
     BottomNavigationBarItem(
-      title: Text("首页"),
+      title: Text(S.of(context).tabBarHome),
       icon: Icon(Icons.home)
     ),
     BottomNavigationBarItem(
-      title: Text("收藏"),
+      title: Text(S.of(context).tabBarFavor),
       icon: Icon(Icons.favorite)
     ),
     BottomNavigationBarItem(
-      title: Text("我的"),
+      title: Text(S.of(context).tabBarProfile),
       icon: Icon(Icons.assignment_ind)
     )
   ];
@@ -92,7 +97,7 @@ class MainData {
   static List<Widget> pages = [
     JPHomePage(),
     JPFavorPage(),
-    JPFavorPage()
+    JPProfilePage()
   ];
 
 }

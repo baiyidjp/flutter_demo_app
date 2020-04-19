@@ -3,7 +3,9 @@ import 'package:flutter_demo_app/core/layout/layout.dart';
 import 'package:flutter_demo_app/core/router/router.dart';
 import 'package:flutter_demo_app/core/viewmodels/app_providers.dart';
 import 'package:flutter_demo_app/ui/shared/app_theme.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'generated/l10n.dart';
 
 main() {
   runApp(
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "美食广场",
+      title: "",
       // 主题
       theme: JPAppTheme.normalTheme,
       // 路由
@@ -31,6 +33,16 @@ class MyApp extends StatelessWidget {
       routes: JPRoute.routes,
       onGenerateRoute: JPRoute.generateRoute,
       onUnknownRoute: JPRoute.unknownRoute,
+      // 国际化
+      localizationsDelegates: {
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        S.delegate
+      },
+      // 当前支持的语言
+      supportedLocales: S.delegate.supportedLocales,
+      // 当前语言
+      locale: Locale.fromSubtags(languageCode: 'zh'),
 
     );
   }
