@@ -22,7 +22,7 @@ class _JPProfilePageState extends State<JPProfilePage> {
             return RaisedButton(
               child: Text('切换语言 ${localViewModel.locale.languageCode}'),
               onPressed: () {
-                if (Localizations.localeOf(context).languageCode.contains('en')) {
+                if (localViewModel.locale.languageCode.contains('en')) {
                   localViewModel.locale = Locale.fromSubtags(languageCode: 'zh');
                 } else {
                   localViewModel.locale = Locale.fromSubtags(languageCode: 'en');

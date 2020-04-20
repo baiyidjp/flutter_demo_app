@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo_app/core/layout/layout.dart';
 import 'package:flutter_demo_app/core/router/router.dart';
 import 'package:flutter_demo_app/core/viewmodels/app_providers.dart';
+import 'package:flutter_demo_app/core/viewmodels/local_view_model.dart';
+import 'package:flutter_demo_app/ui/pages/main/main_page.dart';
 import 'package:flutter_demo_app/ui/shared/app_theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
       // 当前支持的语言
       supportedLocales: S.delegate.supportedLocales,
       // 当前语言
-      locale: Locale.fromSubtags(languageCode: 'zh'),
+      locale: Locale.fromSubtags(languageCode: 'zh')
 
     );
   }
